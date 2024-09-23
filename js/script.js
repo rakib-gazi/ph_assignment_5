@@ -21,6 +21,11 @@ function showActiveBtn(id1, id2){
     document.getElementById(id2).classList.remove('bg-btn');
     document.getElementById(id2).classList.add('border', 'border-gray-400');
 }
+function donationModal(cardHeadline){
+    document.getElementById('donation-modal').showModal();
+    const cardNewHeadline = document.getElementById(cardHeadline).innerText;
+    document.getElementById('donation_headline').innerText = 'You have donated for'+ cardNewHeadline;
+}
 
 document.getElementById('donated-btn-1').addEventListener('click', function(even){
     even.preventDefault();
@@ -34,6 +39,7 @@ document.getElementById('donated-btn-1').addEventListener('click', function(even
             const donatedTotalBalanceAmount = parseFloat(donatedTotalBalance); 
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-1').innerText = newDonatedBalance;
+            donationModal('card-headline-1');
         }
     }else{
         alert('this is another data type: ', amount)
@@ -51,6 +57,7 @@ document.getElementById('donated-btn-2').addEventListener('click', function(even
             const donatedTotalBalanceAmount = parseFloat(donatedTotalBalance); 
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-2').innerText = newDonatedBalance;
+            donationModal('card-headline-2');
         }
     }else{
         alert('this is another data type: ', amount)
@@ -68,6 +75,7 @@ document.getElementById('donated-btn-3').addEventListener('click', function(even
             const donatedTotalBalanceAmount = parseFloat(donatedTotalBalance); 
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-3').innerText = newDonatedBalance;
+            donationModal('card-headline-3');
         }
     }else{
         alert('this is another data type: ', amount)
