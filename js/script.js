@@ -24,7 +24,7 @@ function showActiveBtn(id1, id2){
 function donationModal(cardHeadline){
     document.getElementById('donation-modal').showModal();
     const cardNewHeadline = document.getElementById(cardHeadline).innerText;
-    document.getElementById('donation_headline').innerText = 'You have donated for'+ cardNewHeadline;
+    document.getElementById('donation_headline').innerText = 'You have donated for '+ cardNewHeadline;
 }
 
 document.getElementById('donated-btn-1').addEventListener('click', function(even){
@@ -42,7 +42,7 @@ document.getElementById('donated-btn-1').addEventListener('click', function(even
             donationModal('card-headline-1');
         }
     }else{
-        alert('this is another data type: ', amount)
+        alert('Invalid data .Please enter valid data.')
     }
 })
 document.getElementById('donated-btn-2').addEventListener('click', function(even){
@@ -60,7 +60,7 @@ document.getElementById('donated-btn-2').addEventListener('click', function(even
             donationModal('card-headline-2');
         }
     }else{
-        alert('this is another data type: ', amount)
+        alert('Invalid data .Please enter valid data.')
     }
 })
 document.getElementById('donated-btn-3').addEventListener('click', function(even){
@@ -78,7 +78,7 @@ document.getElementById('donated-btn-3').addEventListener('click', function(even
             donationModal('card-headline-3');
         }
     }else{
-        alert('this is another data type: ', amount)
+        alert('Invalid data .Please enter valid data.')
     }
 })
 
@@ -91,3 +91,15 @@ document.getElementById('history').addEventListener('click', function(){
     showSectionByID('history-section');
     showActiveBtn('history','donation');
 })
+
+const navbar = document.getElementById('header');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY >= 50) {
+        navbar.classList.add('backdrop-blur-3xl', 'sticky', 'top-0', 'z-50','bg-opacity-60');
+    } else {
+        navbar.classList.remove('backdrop-blur', 'sticky', 'top-0', 'z-50','bg-opacity-60');
+        navbar.classList.add('bg-nav');
+    }
+});
+
