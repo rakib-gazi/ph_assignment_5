@@ -16,9 +16,9 @@ document.getElementById('donated-btn-1').addEventListener('click', function(even
         alert('this is another data type: ', amount)
     }
 })
-document.getElementById('donated-btn-1').addEventListener('click', function(even){
+document.getElementById('donated-btn-2').addEventListener('click', function(even){
     even.preventDefault();
-    const donatedAmount = document.getElementById('donated-balance-1').value;
+    const donatedAmount = document.getElementById('donated-balance-2').value;
     const amount = parseFloat(donatedAmount);
     if(  typeof amount === "number" && !isNaN(amount)){
         const mainBalance = document.getElementById('main-balance').innerText;
