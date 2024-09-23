@@ -27,6 +27,17 @@ function donationModal(cardHeadline){
     document.getElementById('donation_headline').innerText = 'You have donated for '+ cardNewHeadline;
 }
 
+function donationHistory(amount, headline){
+    const historySection = document.getElementById('history-section')
+    const cardHeadline = document.getElementById(headline).innerText;
+    const donateTime = new Date();
+    historySection.innerHTML=`
+    <div class="p-8 border border-gray-400 rounded-xl shadow-md my-6">
+        <h1 class="font-bold text-black text-xl">${amount} Taka is ${cardHeadline}</h1>
+        <p class="text-gray-500"> Date : ${donateTime}</p>
+    </div>`;
+}
+
 document.getElementById('donated-btn-1').addEventListener('click', function(even){
     even.preventDefault();
     const amount = donatedAmount ('donated-balance-1');
@@ -40,6 +51,7 @@ document.getElementById('donated-btn-1').addEventListener('click', function(even
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-1').innerText = newDonatedBalance;
             donationModal('card-headline-1');
+            donationHistory(amount, 'card-headline-1');
         }
     }else{
         alert('Invalid data .Please enter valid data.')
@@ -58,6 +70,7 @@ document.getElementById('donated-btn-2').addEventListener('click', function(even
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-2').innerText = newDonatedBalance;
             donationModal('card-headline-2');
+            donationHistory(amount, 'card-headline-2');
         }
     }else{
         alert('Invalid data .Please enter valid data.')
@@ -76,6 +89,7 @@ document.getElementById('donated-btn-3').addEventListener('click', function(even
             const newDonatedBalance =  donatedTotalBalanceAmount + amount;
             document.getElementById('donated-total-balance-3').innerText = newDonatedBalance;
             donationModal('card-headline-3');
+            donationHistory(amount, 'card-headline-3');
         }
     }else{
         alert('Invalid data .Please enter valid data.')
