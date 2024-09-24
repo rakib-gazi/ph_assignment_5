@@ -64,7 +64,7 @@ for (let i = 1; i <= 3; i++) {
         event.preventDefault();
         const amount = donatedAmount (`donated-balance-${i}`);
         const mainBalanceAmount = mainBalance();
-        if(  typeof amount === "number" && !isNaN(amount) && amount>0 ){
+        if(  typeof amount === "number" && !isNaN(amount) && amount>0 && amount <= mainBalanceAmount ){
             if(mainBalanceAmount > 0 && mainBalanceAmount >= amount){
                 const totalMainBalance = mainBalanceAmount - amount;
                 document.getElementById('main-balance').innerText = totalMainBalance;
@@ -77,6 +77,7 @@ for (let i = 1; i <= 3; i++) {
                 document.getElementById(`donated-balance-${i}`).value = '';
             }
         }else{
+            document.getElementById(`donated-balance-${i}`).value = '';
             alert('Invalid data .Please enter valid data.')
         }
     }) 
