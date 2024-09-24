@@ -18,13 +18,15 @@
         tailwind.config = {
           theme: {
             extend: {
+                // custom color added
               colors: {
                 nav: '#f9f7f3',
                 btn: '#b4f461',
               },
+              //   custom font added
               fontFamily: {
-                    nunito: ['Nunito Sans', 'sans-serif'],
-                },
+                nunito: ['Nunito Sans', 'sans-serif'],
+              },
             }
           },
         }
@@ -32,6 +34,7 @@
 </head>
 <body class="bg-white font-nunito">
     <header id="blog-header" class="bg-nav">
+        <!-- responsive navbar -->
         <nav  class=" container mx-auto  py-4 xl:px-0 px-6">
             <div class="flex md:flex-row flex-col justify-between items-center md:gap-y-0 gap-y-6">
                 <a href="index.html" class="bg-btn px-6 py-2 rounded-xl text-black font-bold text-xl md:block hidden">Home</a>
@@ -40,7 +43,8 @@
                     <h3 class="font-bold text-xl text-black">Crisis Support Bangladesh</h3>
                 </div>
                 <div class="flex justify-between items-center md:order-none order-2 md:gap-x-0 gap-x-24">
-                    <a href="#" class="bg-btn px-6 py-2 rounded-xl text-black font-bold text-base md:hidden block">Blog</a>
+                    <!-- this button specially for mobile device -->
+                    <a href="index.html" class="bg-btn px-6 py-2 rounded-xl text-black font-bold text-base md:hidden block">Blog</a>
                     <div class="flex justify-center items-center gap-x-2">
                         <img src="images/coin.png" alt="site logo">
                         <p id="main-balance" class="font-bold md:text-xl text-base text-gray-500">5500</p>
@@ -51,12 +55,14 @@
         </nav>
     </header>
     <main>
+        <!-- faq section -->
         <section  class=" container mx-auto xl:px-0 px-6 py-12">
             <div class="flex items-center gap-x-4 mb-12">
                 <h1 class="text-gray-950 text-4xl font-black">Important Faq</h1>
                 <img src="images/icon.gif" alt="">
             </div>
             <div class="flex flex-col gap-y-4">
+                <!-- faq 1 -->
                 <div class="collapse collapse-arrow  shadow-md">
                     <input type="radio" name="my-accordion-2" checked="checked" />
                     <div class="collapse-title text-xl font-bold ">What is the Document Object Model (DOM)?</div>
@@ -70,6 +76,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- faq 2 -->
                 <div class="collapse collapse-arrow  shadow-md">
                     <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">How do you select an element from the DOM?</div>
@@ -87,6 +94,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- faq 2 -->
                 <div class="collapse collapse-arrow  shadow-md">
                     <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">What is event delegation in the context of the DOM, and why is it useful?</div>
@@ -113,6 +121,7 @@
                             </ul>
                     </div>
                 </div>
+                <!-- faq 4 -->
                 <div class="collapse collapse-arrow  shadow-md">
                     <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">How do you manipulate an element's attributes and styles using the DOM?</div>
@@ -145,11 +154,10 @@
                 </div>
             </div>
         </section>
-        
     </main>
-    <footer class="bg-nav h-32">
-
-    </footer>
+    <!-- empty footer with background color with custom footer height -->
+    <footer class="bg-nav h-32"></footer>
+    <!-- javascript file for index.html file -->
     <script src="js/blog.js"></script>
 </body>
 </html>
