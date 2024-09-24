@@ -97,6 +97,24 @@
                 <!-- faq 2 -->
                 <div class="collapse collapse-arrow  shadow-md">
                     <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-bold ">How do you select an element from the DOM?</div>
+                    <div class="collapse-content border-t border-gray-400 pt-4">
+                      <p class="">The document object represents our web page.
+                        If we want to access any element in an HTML page, we can always start with accessing the document object.</p>
+                        <p class="font-bold py-1">Below are some examples of how we can use the document object to access and manipulate HTML.</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>document.getElementById(): This method selects an element by its unique id. It's efficient for selecting single, known elements quickly.</li>
+                            <li>document.getElementsByClassName(): This selects all elements with a specified class name. It returns a live collection of elements, useful when you need to apply changes to multiple elements.</li>
+                            <li>document.getElementsByTagName(): This method selects elements by their tag name (e.g., div, p). It returns all elements with the specified tag.</li>
+                            <li>document.querySelector(): This method selects the first element that matches a given CSS selector. It’s versatile and supports complex selections.
+                            <li>document.querySelectorAll(): Similar to querySelector(), this method returns all elements matching a CSS selector, providing a static collection of elements.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- faq 3 -->
+                <div class="collapse collapse-arrow  shadow-md">
+                    <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">What is event delegation in the context of the DOM, and why is it useful?</div>
                     <div class="collapse-content border-t border-gray-400 pt-4">
                         <p class="">Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.</p>
