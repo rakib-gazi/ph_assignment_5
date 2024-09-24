@@ -32,7 +32,7 @@
         }
     </script>
 </head>
-<body class="bg-white font-nunito">
+<body class="bg-white flex flex-col min-h-screen font-nunito">
     <header id="blog-header" class="bg-nav">
         <!-- responsive navbar -->
         <nav  class=" container mx-auto  py-4 xl:px-0 px-6">
@@ -54,7 +54,7 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main class="flex-grow">
         <!-- faq section -->
         <section  class=" container mx-auto xl:px-0 px-6 py-12">
             <div class="flex items-center gap-x-4 mb-12">
@@ -67,13 +67,8 @@
                     <input type="radio" name="my-accordion-2" checked="checked" />
                     <div class="collapse-title text-xl font-bold ">What is the Document Object Model (DOM)?</div>
                     <div class="collapse-content border-t border-gray-400 pt-4">
-                        <p class="">The DOM is a W3C (World Wide Web Consortium) standard. The DOM defines a standard for accessing documents. "The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."</p>
-                        <p class="font-bold py-1">The W3C DOM standard is separated into 3 different parts:</p>
-                        <ul class="list-disc ps-12 py-2">
-                            <li>TCore DOM - standard model for all document types</li>
-                            <li>XML DOM - standard model for XML documents</li>
-                            <li>HTML DOM - standard model for HTML documents</li>
-                        </ul>
+                        <p class="font-bold py-1">The definition of DOM according to me is given below :</p>
+                        <p class="">The DOM stands for Document Object Model. The Document refers to the all elements which is situated inside the Html tag or elements. we can easily triggered any elements  & manipulated it using Javascript DOM Method. So DOM is interesting feature of Javascript.</p>
                     </div>
                 </div>
                 <!-- faq 2 -->
@@ -81,15 +76,13 @@
                     <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">How do you select an element from the DOM?</div>
                     <div class="collapse-content border-t border-gray-400 pt-4">
-                        <p class="">The document object represents our web page.
-                            If we want to access any element in an HTML page, we can always start with accessing the document object.</p>
-                            <p class="font-bold py-1">Below are some examples of how we can use the document object to access and manipulate HTML.</p>
+                            <p class="font-bold py-1">We can select elements form DOM in most common five way, Such as.</p>
                             <ul class="list-disc ps-4 py-2">
-                                <li>document.getElementById(): This method selects an element by its unique id. It's efficient for selecting single, known elements quickly.</li>
-                                <li>document.getElementsByClassName(): This selects all elements with a specified class name. It returns a live collection of elements, useful when you need to apply changes to multiple elements.</li>
-                                <li>document.getElementsByTagName(): This method selects elements by their tag name (e.g., div, p). It returns all elements with the specified tag.</li>
-                                <li>document.querySelector(): This method selects the first element that matches a given CSS selector. It’s versatile and supports complex selections.
-                                <li>document.querySelectorAll(): Similar to querySelector(), this method returns all elements matching a CSS selector, providing a static collection of elements.
+                                <li>document.getElementById(): This method selects an element by its unique id. </li>
+                                <li>document.getElementsByClassName(): This selects all elements with a specified class name.</li>
+                                <li>document.getElementsByTagName(): This method selects elements by their tag name (e.g., div, p).</li>
+                                <li>document.querySelector(): This method selects the first element that matches a given CSS selector.
+                                <li>document.querySelectorAll(): Similar to querySelector(), this method returns all elements matching a CSS selector.
                                 </li>
                             </ul>
                     </div>
@@ -99,25 +92,16 @@
                     <input type="radio" name="my-accordion-2" />
                     <div class="collapse-title text-xl font-bold ">What is event delegation in the context of the DOM, and why is it useful?</div>
                     <div class="collapse-content border-t border-gray-400 pt-4">
-                        <p class="">Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.</p>
-                            <p class="font-bold py-1">How Event Delegation Works:</p>
+                        <p class="font-bold py-1">How Event Delegation Works:</p>
+                        <p class="">Event Delegation is pattern which used in parent DOM, where an Event Listener added in parent then access all child using parent Event Listener. </p>
+                        <p class="font-bold py-1">Why Event Delegation is Useful:</p>
                             <ul class="list-disc ps-12 py-2">
-                                <li>Event Bubbling:
-                                     When an event (like a click) is triggered on a child element, it bubbles up through the DOM tree, passing through all of its parent elements until it reaches the root (document).</li>
-                                <li>Event Listener on Parent:
-                                     By placing an event listener on a parent element, you can catch events from any child element by inspecting the event.target to determine which child triggered the event.</li>
-                            </ul>
-                            <p class="font-bold py-1">Why Event Delegation is Useful:</p>
-                            <ul class="list-disc ps-12 py-2">
-                                <li>Performance Efficiency:
-
-                                     Reduces the need to attach separate event listeners to every child element, which can save memory and processing power, especially when handling a large number of elements.</li>
-                                <li>Handles Dynamically Added Elements:
-
-                                     Dynamically created elements (e.g., elements added by JavaScript) do not need their own event listeners. The parent’s listener will still catch events from these new elements.</li>
+                                <li>Boosting Performance:
+                                     when have many child element then we can use one event listener instead of using individuals child event listener</li>
+                                <li>Dynamic Elements:
+                                     we can add dynamically child element using parent event listener.</li>
                                 <li>Simplified Code:
-
-                                     With one event listener for a parent, code is easier to manage and maintain, reducing redundancy and potential bugs when handling events across many elements.</li>
+                                     Its Simplified our code which increase more readability of code.</li>
                             </ul>
                     </div>
                 </div>
@@ -128,22 +112,18 @@
                     <div class="collapse-content border-t border-gray-400 pt-4">
                         <p class="">We can manipulate an element's attributes and styles using the DOM in various way. Some of Example are given below.</p>
                         <p class="font-bold py-1">Attribute Manipulate:</p>
-                        <p class="">Attributes are properties like src, href, alt, id, etc., that are defined within an HTML tag. Using JavaScript, we can get, set, or remove these attributes.</p>
-                        <p class="font-bold py-1">Common Methods for Attributes Manipulating:</p>
                         <ul class="list-disc ps-12 py-2">
                             <li>getAttribute(): Retrieves the value of an attribute.</li>
                             <li>setAttribute(): Sets a new value for an attribute.</li>
                             <li>removeAttribute(): Removes an attribute.</li>
                         </ul>
                         <p class="font-bold py-1">Style Manipulate:</p>
-                        <p class="">To change an element's inline styles, we can access the style property of an element. This allows you to modify CSS properties directly from JavaScript.</p>
                         <ul class="list-disc ps-12 py-2">
                             <li>element.style.property = value: The style property is used to set or modify the inline styles of an element. In JavaScript, CSS property names are written in camelCase.</li>
                             <li>element.style.cssText: This property can be used to set multiple CSS styles at once in a string format.</li>
                             <p>For non-inline styles, we can use the getComputedStyle() method to get the final computed values of styles applied to an element, which includes styles from stylesheets and inline styles.</p>
                         </ul>
                         <p class="font-bold py-1">Using classList for Style Manipulation:</p>
-                        <p class="">Instead of modifying the style attribute directly, the classList property is often more efficient for applying styles through CSS classes. It provides several methods to manipulate CSS classes:</p>
                         <ul class="list-disc ps-12 py-2">
                             <li>add(className): Adds a specified class to the element.</li>
                             <li>remove(className): Removes a specified class from the element.</li>

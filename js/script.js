@@ -48,7 +48,7 @@ function donationHistory(amount, headline){
     //created a h1 heading inside the div & added inner text then appened to div
     const cardH1 = document.createElement("h1");
     cardH1.classList.add('font-bold', 'text-black','text-xl');
-    cardH1.innerText= `${amount} Taka is ${cardHeadline}`;
+    cardH1.innerText= `${amount} Taka is donated for ${cardHeadline}`;
     cardDiv.appendChild(cardH1);
     //created a p tag inside the div & added inner text current transction time then appened to div
     const cardP = document.createElement("p");
