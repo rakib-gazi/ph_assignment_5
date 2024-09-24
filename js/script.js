@@ -38,8 +38,8 @@ function donationHistory(amount, headline){
     </div>`;
 }
 
-document.getElementById('donated-btn-1').addEventListener('click', function(even){
-    even.preventDefault();
+document.getElementById('donated-btn-1').addEventListener('click', function(event){
+    event.preventDefault();
     const amount = donatedAmount ('donated-balance-1');
     if(  typeof amount === "number" && !isNaN(amount) && amount>0 ){
         const mainBalanceAmount = mainBalance();
@@ -57,8 +57,8 @@ document.getElementById('donated-btn-1').addEventListener('click', function(even
         alert('Invalid data .Please enter valid data.')
     }
 })
-document.getElementById('donated-btn-2').addEventListener('click', function(even){
-    even.preventDefault();
+document.getElementById('donated-btn-2').addEventListener('click', function(event){
+    event.preventDefault();
     const amount = donatedAmount ('donated-balance-2');
     if(  typeof amount === "number" && !isNaN(amount) && amount>0   ){
         const mainBalanceAmount = mainBalance();
@@ -76,8 +76,8 @@ document.getElementById('donated-btn-2').addEventListener('click', function(even
         alert('Invalid data .Please enter valid data.')
     }
 })
-document.getElementById('donated-btn-3').addEventListener('click', function(even){
-    even.preventDefault();
+document.getElementById('donated-btn-3').addEventListener('click', function(event){
+    event.preventDefault();
     const amount = donatedAmount ('donated-balance-3');
     if(  typeof amount === "number" && !isNaN(amount) && amount>0   ){
         const mainBalanceAmount = mainBalance();
@@ -116,4 +116,5 @@ window.addEventListener('scroll', function() {
         navbar.classList.add('bg-nav');
     }
 });
+
 

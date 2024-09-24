@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- site Title -->
+    <title>Blog  || Assingment 5</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <!-- Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind Css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind custom configaration -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                nav: '#f9f7f3',
+                btn: '#b4f461',
+              },
+              fontFamily: {
+                    nunito: ['Nunito Sans', 'sans-serif'],
+                },
+            }
+          },
+        }
+    </script>
+</head>
+<body class="bg-white font-nunito">
+    <header id="blog-header" class="bg-nav">
+        <nav  class=" container mx-auto  py-4 xl:px-0 px-6">
+            <div class="flex md:flex-row flex-col justify-between items-center md:gap-y-0 gap-y-6">
+                <a href="index.html" class="bg-btn px-6 py-2 rounded-xl text-black font-bold text-xl md:block hidden">Home</a>
+                <div class="flex justify-center items-center gap-x-4 md:order-none order-1">
+                    <img src="images/logo.png" alt="site logo">
+                    <h3 class="font-bold text-xl text-black">Crisis Support Bangladesh</h3>
+                </div>
+                <div class="flex justify-between items-center md:order-none order-2 md:gap-x-0 gap-x-24">
+                    <a href="#" class="bg-btn px-6 py-2 rounded-xl text-black font-bold text-base md:hidden block">Blog</a>
+                    <div class="flex justify-center items-center gap-x-2">
+                        <img src="images/coin.png" alt="site logo">
+                        <p id="main-balance" class="font-bold md:text-xl text-base text-gray-500">5500</p>
+                        <p class="font-bold md:text-xl text-base text-gray-500">BDT</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section  class=" container mx-auto xl:px-0 px-6 py-12">
+            <div class="flex items-center gap-x-4 mb-12">
+                <h1 class="text-gray-950 text-4xl font-black">Important Faq</h1>
+                <img src="images/icon.gif" alt="">
+            </div>
+            <div class="flex flex-col gap-y-4">
+                <div class="collapse collapse-arrow  shadow-md">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="collapse-title text-xl font-bold ">What is the Document Object Model (DOM)?</div>
+                    <div class="collapse-content border-t border-gray-400 pt-4">
+                        <p class="">The DOM is a W3C (World Wide Web Consortium) standard. The DOM defines a standard for accessing documents. "The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."</p>
+                        <p class="font-bold py-1">The W3C DOM standard is separated into 3 different parts:</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>TCore DOM - standard model for all document types</li>
+                            <li>XML DOM - standard model for XML documents</li>
+                            <li>HTML DOM - standard model for HTML documents</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow  shadow-md">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-bold ">How do you select an element from the DOM?</div>
+                    <div class="collapse-content border-t border-gray-400 pt-4">
+                      <p class="">The document object represents our web page.
+                        If we want to access any element in an HTML page, we can always start with accessing the document object.</p>
+                        <p class="font-bold py-1">Below are some examples of how we can use the document object to access and manipulate HTML.</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>document.getElementById(): This method selects an element by its unique id. It's efficient for selecting single, known elements quickly.</li>
+                            <li>document.getElementsByClassName(): This selects all elements with a specified class name. It returns a live collection of elements, useful when you need to apply changes to multiple elements.</li>
+                            <li>document.getElementsByTagName(): This method selects elements by their tag name (e.g., div, p). It returns all elements with the specified tag.</li>
+                            <li>document.querySelector(): This method selects the first element that matches a given CSS selector. It’s versatile and supports complex selections.
+                            <li>document.querySelectorAll(): Similar to querySelector(), this method returns all elements matching a CSS selector, providing a static collection of elements.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow  shadow-md">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-bold ">What is event delegation in the context of the DOM, and why is it useful?</div>
+                    <div class="collapse-content border-t border-gray-400 pt-4">
+                        <p class="">Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.</p>
+                            <p class="font-bold py-1">How Event Delegation Works:</p>
+                            <ul class="list-disc ps-12 py-2">
+                                <li>Event Bubbling:
+                                     When an event (like a click) is triggered on a child element, it bubbles up through the DOM tree, passing through all of its parent elements until it reaches the root (document).</li>
+                                <li>Event Listener on Parent:
+                                     By placing an event listener on a parent element, you can catch events from any child element by inspecting the event.target to determine which child triggered the event.</li>
+                            </ul>
+                            <p class="font-bold py-1">Why Event Delegation is Useful:</p>
+                            <ul class="list-disc ps-12 py-2">
+                                <li>Performance Efficiency:
+
+                                     Reduces the need to attach separate event listeners to every child element, which can save memory and processing power, especially when handling a large number of elements.</li>
+                                <li>Handles Dynamically Added Elements:
+
+                                     Dynamically created elements (e.g., elements added by JavaScript) do not need their own event listeners. The parent’s listener will still catch events from these new elements.</li>
+                                <li>Simplified Code:
+
+                                     With one event listener for a parent, code is easier to manage and maintain, reducing redundancy and potential bugs when handling events across many elements.</li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="collapse collapse-arrow  shadow-md">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title text-xl font-bold ">How do you manipulate an element's attributes and styles using the DOM?</div>
+                    <div class="collapse-content border-t border-gray-400 pt-4">
+                        <p class="">We can manipulate an element's attributes and styles using the DOM in various way. Some of Example are given below.</p>
+                        <p class="font-bold py-1">Attribute Manipulate:</p>
+                        <p class="">Attributes are properties like src, href, alt, id, etc., that are defined within an HTML tag. Using JavaScript, we can get, set, or remove these attributes.</p>
+                        <p class="font-bold py-1">Common Methods for Attributes Manipulating:</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>getAttribute(): Retrieves the value of an attribute.</li>
+                            <li>setAttribute(): Sets a new value for an attribute.</li>
+                            <li>removeAttribute(): Removes an attribute.</li>
+                        </ul>
+                        <p class="font-bold py-1">Style Manipulate:</p>
+                        <p class="">To change an element's inline styles, we can access the style property of an element. This allows you to modify CSS properties directly from JavaScript.</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>element.style.property = value: The style property is used to set or modify the inline styles of an element. In JavaScript, CSS property names are written in camelCase.</li>
+                            <li>element.style.cssText: This property can be used to set multiple CSS styles at once in a string format.</li>
+                            <p>For non-inline styles, we can use the getComputedStyle() method to get the final computed values of styles applied to an element, which includes styles from stylesheets and inline styles.</p>
+                        </ul>
+                        <p class="font-bold py-1">Using classList for Style Manipulation:</p>
+                        <p class="">Instead of modifying the style attribute directly, the classList property is often more efficient for applying styles through CSS classes. It provides several methods to manipulate CSS classes:</p>
+                        <ul class="list-disc ps-12 py-2">
+                            <li>add(className): Adds a specified class to the element.</li>
+                            <li>remove(className): Removes a specified class from the element.</li>
+                            <li>toggle(className): Toggles the presence of a specified class on the element.</li>
+                            <li>contains(className): Checks whether the element has a specified class.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="bg-nav h-32">
+
+    </footer>
+    <script src="js/blog.js"></script>
+</body>
+</html>
