@@ -29,12 +29,17 @@ function donationModal(cardHeadline, amount){
     document.getElementById('donation-modal').showModal();
     const cardNewHeadline = document.getElementById(cardHeadline).innerText;
     document.getElementById('donation_headline').innerText = 'You have donated for '+ cardNewHeadline;
-    document.getElementById('modal-amount').innerText = `${amount} Taka`;
+    document.getElementById('modal-amount').innerText = `${amount} Taka Donated`;
 }
 //donation history function
 function donationHistory(amount, headline){
+    //hide empty message
+    const emptyMsg = document.getElementById('empty-message');
+    if(emptyMsg){
+        emptyMsg.remove();
+    }
     //get history section
-    const historySection = document.getElementById('history-section')
+    const historySection = document.getElementById('history-section');
     const cardHeadline = document.getElementById(headline).innerText;
     const donateTime = new Date();
     //created a div inside history section with class added
@@ -47,7 +52,7 @@ function donationHistory(amount, headline){
     cardDiv.appendChild(cardH1);
     //created a p tag inside the div & added inner text current transction time then appened to div
     const cardP = document.createElement("p");
-    cardP.classList.add('text-gray-500','pt-4');
+    cardP.classList.add('text-gray-700','pt-4');
     cardP.innerText= `Date: ${donateTime}`;
     cardDiv.appendChild(cardP);
     //finally preprend this div inside history section 
